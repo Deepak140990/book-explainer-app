@@ -24,6 +24,7 @@ app.use(
 );
 
 const distPath = path.resolve(process.cwd(), "dist/public");
+
 app.use(express.static(distPath));
 
 app.get("*", (_req, res) => {
