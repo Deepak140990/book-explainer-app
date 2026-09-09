@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.env
+Disallow: /admin
+
+Sitemap: https://bookexplai-bplsildk.manus.space/sitemap.xml
