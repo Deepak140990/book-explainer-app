@@ -2,10 +2,10 @@ import "dotenv/config";
 import express from "express";
 import path from "path";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
-import { registerOAuthRoutes } from "../server/_core/oauth";
-import { registerStorageProxy } from "../server/_core/storageProxy";
-import { appRouter } from "../server/routers";
-import { createContext } from "../server/_core/context";
+import { registerOAuthRoutes } from "./server/_core/oauth";
+import { registerStorageProxy } from "./server/_core/storageProxy";
+import { appRouter } from "./server/routers";
+import { createContext } from "./server/_core/context";
 
 const app = express();
 
@@ -24,7 +24,6 @@ app.use(
 );
 
 const distPath = path.resolve(process.cwd(), "dist/public");
-
 app.use(express.static(distPath));
 
 app.get("*", (_req, res) => {
